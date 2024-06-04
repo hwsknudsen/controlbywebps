@@ -1,2 +1,2 @@
 # controlbywebps
-controlbyweb ps data grabber 
+controlbyweb ps data grabber for prtg 
