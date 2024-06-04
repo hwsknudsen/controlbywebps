@@ -1,6 +1,11 @@
 $username = "user"
-$password = "pw"
+$password = "PW"
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username,$password)))
 
-$response = Invoke-RestMethod -Headers @{Authorization=("Basic {0}" -f $base64AuthInfo)} -Uri "http://address/customState.json?showUnits=0&showColors=0"
-$response.'dieselVolume(gallons)'
+$response = Invoke-RestMethod -Headers @{Authorization=("Basic {0}" -f $base64AuthInfo)} -Uri "http://URL/customState.json?showUnits=0&showColors=0"
+$int = [Math]::Round($response.'dieselVolume(gallons)',0)
+
+$x=[string]$int+":OK"
+write-output $x
+
+exit 0
